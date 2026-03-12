@@ -1,0 +1,1 @@
+This is a personal xmake repo hosted in a singular repo, mostly to simplify the use of my own libraries.
