@@ -5,12 +5,12 @@ package("libuiohook")
 
     set_kind("library")
 
+    if is_plat("windows") or is_plat("macosx") then
+        add_deps("cmake")
+    end
+
     if is_plat("linux") then
-        on_load( function (package)
-            package:add("deps", "libx11", { configs = { shared = package:config("shared") } })
-            package:add("deps", "libxtst", { configs = { shared = package:config("shared") } })
-            package:add("deps", "libxkbcommon", { configs = { x11 = true, shared = package:config("shared") } })
-        end)
+        add_deps("cmake", "libxcb", "libx11", "libxkbcommon", "libxtst")
     end
 
     add_versions("1.2.2", "1.2.2")
