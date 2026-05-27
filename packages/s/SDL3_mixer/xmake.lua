@@ -7,7 +7,6 @@ package("SDL3_mixer")
 
     set_urls("https://github.com/libsdl-org/SDL_mixer.git")
 
-    add_versions("latest", "main")
     add_versions("3.2.2", "release-3.2.2")
 
     on_load( function (package)
