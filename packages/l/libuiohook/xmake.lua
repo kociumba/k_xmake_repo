@@ -5,6 +5,12 @@ package("libuiohook")
 
     set_kind("library")
 
+    if is_plat("linux") then
+        on_load( function (package)
+            package:add("deps", "libx11", { configs = { shared = package:config("shared") } })
+        end)
+    end
+
     add_versions("1.2.2", "1.2.2")
     add_versions("1.2.3", "2a2d40f96178481d98980da0a8c1db8a41937d7c") -- aka: latest since the current main branch has no new releases
 
