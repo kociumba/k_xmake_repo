@@ -1,4 +1,4 @@
-package("SDL3_mixer")
+package("sdl3_mixer")
     set_homepage("https://github.com/libsdl-org/SDL_mixer")
     set_description("An audio mixer that supports various file formats for Simple Directmedia Layer.")
     set_license("Zlib license")
