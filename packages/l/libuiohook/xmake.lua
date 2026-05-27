@@ -8,6 +8,7 @@ package("libuiohook")
     if is_plat("linux") then
         on_load( function (package)
             package:add("deps", "libx11", { configs = { shared = package:config("shared") } })
+            package:add("deps", "libxtst", { configs = { shared = package:config("shared") } })
         end)
     end
 
