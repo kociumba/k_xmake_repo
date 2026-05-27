@@ -9,7 +9,7 @@ package("libuiohook")
         on_load( function (package)
             package:add("deps", "libx11", { configs = { shared = package:config("shared") } })
             package:add("deps", "libxtst", { configs = { shared = package:config("shared") } })
-            package:add("deps", "libxkbcommon", { configs = { shared = package:config("shared") } })
+            package:add("deps", "libxkbcommon", { configs = { x11 = true, shared = package:config("shared") } })
         end)
     end
 
