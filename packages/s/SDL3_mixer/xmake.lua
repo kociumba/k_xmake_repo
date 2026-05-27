@@ -7,12 +7,15 @@ package("SDL3_mixer")
 
     set_urls("https://github.com/libsdl-org/SDL_mixer.git")
 
-    on_load(function (package)
-        package:add("deps", "libsdl3", { configs = { shared = package:config("shared") }})
+    add_versions("latest", "main")
+    add_versions("3.2.2", "release-3.2.2")
+
+    on_load( function (package)
+        package:add("deps", "libsdl3", { configs = { shared = package:config("shared") } })
     end)
 
-    on_install(function (package)
-        local configs = {"-DSDL3MIXER_VENDORED=OFF", "-DSDL3MIXER_SAMPLES=OFF"}
+    on_install( function (package)
+        local configs = { "-DSDL3MIXER_VENDORED=OFF", "-DSDL3MIXER_SAMPLES=OFF" }
         table.insert(configs, "-DCMAKE_BUILD_TYPE=" .. (package:is_debug() and "Debug" or "Release"))
         table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
 
