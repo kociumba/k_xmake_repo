@@ -1,4 +1,4 @@
-This is a personal xmake repo hosted in a singular repo, mostly to simplify the use of my own libraries.
+This is a personal xmake repo, mostly to simplify the use of my own libraries.
 
 To use add the following to `xmake.lua`:
 
